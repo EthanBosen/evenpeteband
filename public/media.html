@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evenpete</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bandpic.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        h1, .button {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .button {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            padding: 15px;
+            margin: 15px auto;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 500px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.5em;
+        }
+
+        .button:hover {
+            background-color: #333;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .logo-container {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            height: 250px;
+            width: auto;
+        }
+
+        .logo-container img {
+            width: 70%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .logo-container img {
+                max-width: 80%;
+            }
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="container">
+        <div class="logo-container">
+            <img id="logoPic" src="evenpetelogo.jpeg" alt="Even Pete Logo" />
+        </div>
+
+        <div class="video-container">
+            <video id="localVideo1" controls style="display:none;">
+                <source src="letsdancemedia.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="button" onclick="playVideo('localVideo1')">Play Let's Dance</button>
+        </div>
+
+        <div class="video-container">
+            <video id="localVideo2" controls style="display:none;">
+                <source src="brightsidemedia.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="button" onclick="playVideo('localVideo2')">Play Bright Side</button>
+        </div>
+
+        <div class="video-container">
+            <video id="localVideo3" controls style="display:none;">
+                <source src="Relaxmedia.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button class="button" onclick="playVideo('localVideo3')">Play Relax</button>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoId) {
+            var video = document.getElementById(videoId);
+            video.style.display = "block";
+            video.play();
+        }
+    </script>
+</body>
+</html>

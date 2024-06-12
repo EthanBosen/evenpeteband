@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evenpete</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap');
+
+        .Booking { background-color: #ffffff; } 
+        .Social { background-color: #ffffff; } 
+        .Payment { background-color: #ffffff; } 
+        .Merch { background-color: #ffffff; color: #000000; } 
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            padding: 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative; 
+            z-index: 1;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('bandpic.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1; 
+            opacity: 0.5; 
+        }
+
+        h1, .button {
+            font-family: 'Roboto Mono', monospace; 
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .button {
+            display: block;
+            width: 80%;
+            max-width: 300px;
+            padding: 15px;
+            margin: 15px auto;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            border-radius: 500px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 1.5em;
+        }
+
+        .button:hover {
+            background-color: #333;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .logo-container {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            height: 250px;
+            width: auto;
+        }
+
+        .logo-container img {
+            width: 70%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        @media screen and (max-width: 600px) {   /*Iphone adjustment*/
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .button {
+                width: 100%;
+                max-width: none;
+                padding: 15px;
+                margin: 10px 0;
+                font-size: 1em;
+            }
+
+            .logo-container img {
+                max-width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="container">
+        <div class="logo-container">
+            <img id="logoPic" src="evenpetelogo.jpeg" alt="Even Pete Logo" />
+        </div>
+        <button class="button Booking" onclick="openBooking()">Book Event</button>
+        <button class="button Social" onclick="openSocial()">Social</button>
+        <button class="button Payment" onclick="openPayment()">Payment</button>
+        <button class="button Merch" onclick="openMerch()">Merch</button>
+        <button class="button Media" onclick="openMedia()">Media</button>
+
+    </div>
+
+    <script>
+        
+        function openBooking() {
+            window.location.href = 'booking.html';
+        }
+
+        function openSocial() {
+            window.location.href = 'https://www.facebook.com/EvEnPeTeBand/';
+        }
+
+        function openPayment() {
+            window.location.href = 'payment.html';
+        }
+
+        function openMerch() {
+            window.location.href = 'merch.html';
+        }
+
+        function openMedia () {
+            window.location.href = 'media.html';
+        }
+    </script>
+    
+</body>
+</html>
